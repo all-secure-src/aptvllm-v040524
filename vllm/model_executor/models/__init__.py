@@ -48,9 +48,11 @@ _MODELS = {
     "OrionForCausalLM": ("orion", "OrionForCausalLM"),
     "PhiForCausalLM": ("phi", "PhiForCausalLM"),
     "Phi3ForCausalLM": ("llama", "LlamaForCausalLM"),
+    "OmegaPrimeForCausalLM": ("llama", "LlamaForCausalLM"),
     "QWenLMHeadModel": ("qwen", "QWenLMHeadModel"),
     "Qwen2ForCausalLM": ("qwen2", "Qwen2ForCausalLM"),
     "Qwen2MoeForCausalLM": ("qwen2_moe", "Qwen2MoeForCausalLM"),
+    "OmegaNeoForCausalLM": ("omeganeo", "OmegaNeoForCausalLM"),
     "RWForCausalLM": ("falcon", "FalconForCausalLM"),
     "StableLMEpochForCausalLM": ("stablelm", "StablelmForCausalLM"),
     "StableLmForCausalLM": ("stablelm", "StablelmForCausalLM"),
@@ -69,6 +71,8 @@ _ROCM_UNSUPPORTED_MODELS = []
 # Architecture -> Reason.
 _ROCM_PARTIALLY_SUPPORTED_MODELS = {
     "Qwen2ForCausalLM":
+    "Sliding window attention is not yet supported in ROCm's flash attention",
+    "OmegaNeoForCausalLM":
     "Sliding window attention is not yet supported in ROCm's flash attention",
     "MistralForCausalLM":
     "Sliding window attention is not yet supported in ROCm's flash attention",
